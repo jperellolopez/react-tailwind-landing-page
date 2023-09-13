@@ -1,0 +1,16 @@
+CREATE PROJECT https://tailwindcss.com/docs/guides/vite
+- cd to root folder and run: npm create vite@latest ./ -- --template react
+- install dependencies: npm install -D tailwindcss postcss autoprefixer
+- start with: npx tailwindcss init -p
+- Follow instructions on web to configure template paths on the tailwind.config.css and index.css files
+- remove App.css file
+- run: npm run dev
+
+DEPLOY PROJECT IN GITHUB PAGES
+- run: npm run build
+- create a new repository in GITHUB
+- push contents: git init > git add . > git commit -m "commit" > git remote add origin https://github.com/jperellolopez/react-tailwind-landing-page.git > git push origin master
+- run: npm install gh-pages --save-dev
+- on package.json, in the scripts object add "deploy": "gh-pages -d dist" 
+- on vite.config.js, on the defineconfig add: base: '/react-tailwind-landing-page/'
+- on github repo options, select github actions, create a workflow and paste this https://vitejs.dev/guide/static-deploy.html#github-pages
